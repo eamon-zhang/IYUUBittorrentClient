@@ -76,7 +76,7 @@ class transmission extends AbstractClient
      * 构造函数
      * @param array $config
      */
-    public function __construct(array $config = [])
+    public function __construct($config = [])
     {
         $this->initialize($config);
         $this->curl = new Curl();
@@ -382,7 +382,7 @@ class transmission extends AbstractClient
      * @return mixed
      * @throws ClientException
      */
-    public function get($ids = [], array $fields = [])
+    public function get($ids = [], $fields = [])
     {
         $default = ["id", "name", "status", "doneDate", "haveValid", "totalSize"];
         if (!is_array($ids)) {

@@ -264,7 +264,7 @@ class qBittorrent extends AbstractClient
      * @param array $config
      * @throws ClientException
      */
-    public function __construct(array $config = [])
+    public function __construct($config = [])
     {
         $this->initialize($config);
         $this->api_version = isset($config['api_version']) && $config['api_version'] ? $config['api_version'] : 2;

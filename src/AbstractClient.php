@@ -66,12 +66,12 @@ abstract class AbstractClient
      * 初始化必须的参数
      * @param array $config
      */
-    public function initialize(array $config = [])
+    public function initialize($config = [])
     {
-        $host = $config['host'] ?? '';
-        $endpoint = $config['endpoint'] ?? '';
-        $username = $config['username'] ?? '';
-        $password = $config['password'] ?? '';
+        $host = isset($config['host']) ? $config['host'] : '';
+        $endpoint = isset($config['endpoint']) ? $config['endpoint'] : '';
+        $username = isset($config['username']) ? $config['username'] : '';
+        $password = isset($config['password']) ? $config['password'] : '';
         $debug    = isset($config['debug']) ? $this->booleanParse($config['debug']) : false;
 
         $this->url = rtrim($host, '/') . $endpoint;
